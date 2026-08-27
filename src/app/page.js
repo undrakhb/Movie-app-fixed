@@ -1,4 +1,5 @@
 "use client";
+
 import { Header } from "./features/Header";
 import { Hero } from "./features/Hero";
 import { Footer } from "./features/Footer";
@@ -74,7 +75,7 @@ export default function Home() {
 
           <section className="w-full px-20 py-10">
             <div className="mx-auto max-w-7xl">
-              <ContinueWatching/>
+              {/* <ContinueWatching/> */}
               <MovieSection
                 title="UPCOMING"
                 movies={upcomingData.slice(0, 10)}
