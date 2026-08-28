@@ -12,7 +12,7 @@ import { MovieSkeleton } from "../../components/MovieSkeleton";
 const api_token =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYTE3NjU2YzRhMTNjNGZkMTA4YTNkYWMxNTIzOWU1NSIsIm5iZiI6MTc4NjU4ODI2OS43MjIsInN1YiI6IjZhN2QyYzZkOTU1MmVlMmNjZTQ0MzI1OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rkN9z-Gh6MuWPxngDLGJrOmaXCRatzzTuaHU0eopQl0";
 
-const MAX_PAGE = 500;
+const MAX_PAGE = 57;
 
 export default function SearchPage() {
   const { query } = useParams();
@@ -38,7 +38,6 @@ export default function SearchPage() {
 
 function SearchResults({ searchTerm }) {
   const router = useRouter();
-
   const [movies, setMovies] = useState([]);
   const [totalResults, setTotalResults] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
@@ -112,7 +111,15 @@ function SearchResults({ searchTerm }) {
       return [1, "...", last - 4, last - 3, last - 2, last - 1, last];
     }
 
-    return [1, "...", currentPage - 1, currentPage, currentPage + 1, "...", last];
+    return [
+      1,
+      "...",
+      currentPage - 1,
+      currentPage,
+      currentPage + 1,
+      "...",
+      last,
+    ];
   };
 
   const headingText = loading
